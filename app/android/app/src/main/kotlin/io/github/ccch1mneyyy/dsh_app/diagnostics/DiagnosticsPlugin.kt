@@ -22,7 +22,7 @@ import kotlin.concurrent.thread
  * - `info` → `{app: {versionName, versionCode, abi}, device: {manufacturer, brand, model,
  *   android, sdkInt, abis, memoryMb, freeStorageMb, display: {widthPx, heightPx, density,
  *   densityDpi, fontScale}}, manifest: {runtimeVersion, abi,
- *   dshVersion, nodeVersion, pnpmVersion, ubuntuVersion, prootVersion, rootfsBytes,
+ *   dshVersion, nodeVersion, pnpmVersion, ubuntuVersion, rootfsBytes,
  *   uncompressedBytes, files}}` (the bundled runtime's `assets/runtime/manifest.json`).
  * - `engineLog {maxBytes}` → the last lines of the engine's log file (`dsh.log`, and the
  *   rotated `dsh.log.1` before it), which outlives the app process. Lines were already
@@ -159,7 +159,6 @@ class DiagnosticsPlugin : FlutterPlugin, io.flutter.embedding.engine.plugins.act
                 "nodeVersion" to str("nodeVersion"),
                 "pnpmVersion" to str("pnpmVersion"),
                 "ubuntuVersion" to str("ubuntuVersion"),
-                "prootVersion" to str("prootVersion"),
                 "rootfsBytes" to long("rootfsBytes"),
                 "uncompressedBytes" to long("uncompressedBytes"),
                 "files" to entries?.optLong("file", -1L)?.takeIf { it >= 0 },
